@@ -35,7 +35,7 @@ filesMiniAOD_UL2018 = {
 }
 
 filesMiniAOD_UL2017 = {
-    'mc' :   cms.untracked.vstring('file:/eos/cms/store/group/phys_egamma/tnpTuples/testFiles/RunIISummer19UL17MiniAOD-DYJetsToLL_M-50.root'),
+    'mc' :   cms.untracked.vstring('file:/eos/user/m/mshelake/ScaleFactorCalc/Test/CMSSW_10_6_13/src/EgammaAnalysis/TnPTreeProducer/Summer20Sample/ACEF09C1-F5AF-1748-9DCD-F719BB7D41F7.root'),
     'data' : cms.untracked.vstring('file:/eos/cms/store/group/phys_egamma/tnpTuples/testFiles/SingleElectron-Run2017F-09Aug2019_UL2017.root'),
 }
 

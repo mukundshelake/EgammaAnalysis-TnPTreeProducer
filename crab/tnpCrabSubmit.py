@@ -8,14 +8,12 @@ submitVersion = "2021-02-10" # add some date here
 doL1matching  = False
 
 defaultArgs   = ['doEleID=True','doPhoID=True','doTrigger=True']
-mainOutputDir = '/store/user/%s/%s' % (os.environ['USER'], submitVersion)
+mainOutputDir = '/eos/user/m/mshelake/ScaleFactorCalc/TnPTrees/%s/%s' % (os.environ['USER'], submitVersion)
 
 # Logging the current version of TnpTreeProducer here, such that you can find back what the actual code looked like when you were submitting
-# os.system('mkdir -p /eos/cms/%s' % mainOutputDir)
-# os.system('(git log -n 1;git diff) &> /eos/cms/%s/git.log' % mainOutputDir)
+os.system('mkdir -p %s' % mainOutputDir)
+os.system('(git log -n 1;git diff) &> %s/git.log' % mainOutputDir)
 
-os.system('mkdir -p /eos/home/m/mshelake/tnpTuples/%s' % mainOutputDir)
-os.system('(git log -n 1;git diff) &> /eos/home/m/mshelake/tnpTuples/%s/git.log' % mainOutputDir)
 
 #
 # Common CRAB settings
@@ -50,7 +48,7 @@ def getLumiMask(era):
   elif era=='UL2016preVFP': return 'https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt'
   elif era=='UL2016postVFP': return 'https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt'
   elif era=='UL2017': return '/eos/user/m/mshelake/ScaleFactorCalc/LumiFiles/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt'
-  elif era=='UL2018': return 'https://cms-service-dqm.web.cern.ch/cms-service-dqm/CAF/certification/Collisions18/13TeV/PromptReco/Cert_314472-325175_13TeV_PromptReco_Collisions18_JSON.txt'
+  elif era=='UL2018': return '/eos/user/m/mshelake/ScaleFactorCalc/LumiFiles/Cert_314472-325175_13TeV_PromptReco_Collisions18_JSON.txt'
 
 
 #
@@ -72,8 +70,8 @@ def submit(config, requestName, sample, era, json, extraParam=[]):
 
   print config
   try:                           crabCommand('submit', config = config)
-  except HTTPException as hte:   print "Failed submitting task: %s" % (hte.headers)
-  except ClientException as cle: print "Failed submitting task: %s" % (cle)
+  except HTTPException as hte:   print "Failed submitting task:HTTPException %s" % (hte.headers)
+  except ClientException as cle: print "Failed submitting task:ClientException %s" % (cle)
   print
   print
 
@@ -128,8 +126,9 @@ if isReleaseAbove(10,6):
   submitWrapper('Run2017E', '/SingleElectron/Run2017E-09Aug2019_UL2017-v1/MINIAOD', era)
   submitWrapper('Run2017F', '/SingleElectron/Run2017F-09Aug2019_UL2017_EcalRecovery-v1/MINIAOD', era)
 
-  # submitWrapper('DY_NLO',  '/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL16MiniAODAPV-106X_mcRun2_asymptotic_preVFP_v8-v1/MINIAODSIM', era)
-  # submitWrapper('DY_LO',   '/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAODAPV-106X_mcRun2_asymptotic_preVFP_v8-v1/MINIAODSIM', era)
+  submitWrapper('DY_NLO',  '/DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM', era)
+  submitWrapper('DY_LO',   '/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM', era)
+  submitWrapper('DY_LO_extn', '/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9_ext1-v1/MINIAODSIM', era)
 
   """era       = 'UL2018'
   submitWrapper('Run2018A', '/EGamma/Run2018A-12Nov2019_UL2018-v2/MINIAOD', era)
