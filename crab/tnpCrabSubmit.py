@@ -8,11 +8,11 @@ submitVersion = "2021-02-10" # add some date here
 doL1matching  = False
 
 defaultArgs   = ['doEleID=True','doPhoID=True','doTrigger=True']
-mainOutputDir = '/eos/user/m/mshelake/ScaleFactorCalc/TnPTrees/%s/%s' % (os.environ['USER'], submitVersion)
+mainOutputDir = '/store/user/%s/%s' % (os.environ['USER'], submitVersion)
 
 # Logging the current version of TnpTreeProducer here, such that you can find back what the actual code looked like when you were submitting
-os.system('mkdir -p %s' % mainOutputDir)
-os.system('(git log -n 1;git diff) &> %s/git.log' % mainOutputDir)
+os.system('mkdir -p /eos/home-m/mshelake/phys_egamma/tnpTuples/%s' % mainOutputDir)
+os.system('(git log -n 1;git diff) &> /eos/home-m/mshelake/phys_egamma/tnpTuples/%s/git.log' % mainOutputDir)
 
 
 #
