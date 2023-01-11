@@ -20,13 +20,13 @@ filesMiniAOD_2016 = {
 
 # Some miniAOD UL testfiles, which are available now and hopefully don't get deleted too soon
 filesMiniAOD_UL2016preVFP = {
-    'mc':   cms.untracked.vstring('file:/eos/cms/store/group/phys_egamma/tnpTuples/testFiles/RunIISummer19UL16MiniAODAPV-DYJetsToLL_M-50.root'),
-    'data': cms.untracked.vstring('file:/eos/cms/store/group/phys_egamma/tnpTuples/testFiles/SingleElectron-Run2016E-21Feb2020_UL2016_HIPM.root'),
+    'mc':   cms.untracked.vstring('file:/eos/user/m/mshelake/ScaleFactorCalc/SampleFilesForTnPProd/RunIISummer20UL16MiniAODAPVv2_DYJetsToLL_M-50/803C12D3-A17C-584C-8E1B-2B59B11C8854.root'),
+    'data': cms.untracked.vstring('file:/eos/user/m/mshelake/ScaleFactorCalc/SampleFilesForTnPProd/SingleElectron-Run2016B-21Feb2020_ver2_UL2016_HIPM_v1/ADAE65A4-DA01-BA42-A8F2-37641146795A.root'),
 }
 
 filesMiniAOD_UL2016postVFP = {
-    'mc':   cms.untracked.vstring(''),
-    'data': cms.untracked.vstring('file:/eos/cms/store/group/phys_egamma/tnpTuples/testFiles/SingleElectron-Run2016F-21Feb2020_UL2016-postVFP.root'),
+    'mc':   cms.untracked.vstring('file:/eos/user/m/mshelake/ScaleFactorCalc/SampleFilesForTnPProd/RunIISummer20UL16MiniAODv2_DYJetsToLL_M-50/127921F5-CAC9-AB4B-8C99-62981DB57E45.root'),
+    'data': cms.untracked.vstring('file:/eos/user/m/mshelake/ScaleFactorCalc/SampleFilesForTnPProd/SingleElectron-Run2016F-21Feb2020_UL2016_v1/40A6FC29-C83D-804B-AB5C-B527BDA6D0F1.root'),
 }
 
 filesMiniAOD_UL2018 = {
@@ -35,8 +35,8 @@ filesMiniAOD_UL2018 = {
 }
 
 filesMiniAOD_UL2017 = {
-    'mc' :   cms.untracked.vstring('file:/eos/user/m/mshelake/ScaleFactorCalc/Test/CMSSW_10_6_13/src/EgammaAnalysis/TnPTreeProducer/Summer20Sample/ACEF09C1-F5AF-1748-9DCD-F719BB7D41F7.root'),
-    'data' : cms.untracked.vstring('file:/eos/cms/store/group/phys_egamma/tnpTuples/testFiles/SingleElectron-Run2017F-09Aug2019_UL2017.root'),
+    'mc' :   cms.untracked.vstring('file:/eos/user/m/mshelake/ScaleFactorCalc/SampleFilesForTnPProd/RunIISummer20UL17MiniAODv2/05668F8F-6DE3-3649-B228-9D7620F7C279.root'),
+    'data' : cms.untracked.vstring('file:/eos/user/m/mshelake/ScaleFactorCalc/SampleFilesForTnPProd/SingleElectron-Run2017B-09Aug2019_UL2017_v1/8A76424E-AA9B-9141-9C0A-FDE3988339E6.root'),
 }
 
 

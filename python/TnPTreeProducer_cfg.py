@@ -119,14 +119,15 @@ else:
 # Settings for trigger tag and probe measurement
 #################################################
 if '2016' in options['era']:
-  options['TnPPATHS']           = cms.vstring("HLT_Ele27_eta2p1_WPTight_Gsf_v*")
-  options['TnPHLTTagFilters']   = cms.vstring("hltEle27erWPTightGsfTrackIsoFilter")
+  options['TnPPATHS']           = cms.vstring("HLT_Ele32_eta2p1_WPTight_Gsf_v*")
+  options['TnPHLTTagFilters']   = cms.vstring("hltEle32WPTightGsfTrackIsoFilter")
   options['TnPHLTProbeFilters'] = cms.vstring()
   options['HLTFILTERSTOMEASURE']= {"passHltEle27WPTightGsf" :                           cms.vstring("hltEle27WPTightGsfTrackIsoFilter"),
                                    "passHltEle23Ele12CaloIdLTrackIdLIsoVLLeg1L1match" : cms.vstring("hltEle23Ele12CaloIdLTrackIdLIsoVLTrackIsoLeg1Filter"),
                                    "passHltEle23Ele12CaloIdLTrackIdLIsoVLLeg2" :        cms.vstring("hltEle23Ele12CaloIdLTrackIdLIsoVLTrackIsoLeg2Filter"),
                                    "passHltDoubleEle33CaloIdLMWSeedLegL1match" :        cms.vstring("hltEG33CaloIdLMWPMS2Filter"),
                                    "passHltDoubleEle33CaloIdLMWUnsLeg" :                cms.vstring("hltDiEle33CaloIdLMWPMS2UnseededFilter"),
+                                   "passHltEle32WPTightGsfEta2p1" : cms.vstring("hltEle32WPTightGsfTrackIsoFilter")
                                   } # Some examples, you can add multiple filters (or OR's of filters, note the vstring) here, each of them will be added to the tuple
 
 elif '2017' in options['era']:
